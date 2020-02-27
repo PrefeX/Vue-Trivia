@@ -1,20 +1,21 @@
-<template>  
-<div class="hello">
-    <h1>Game Menu!!!</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
+<!-- TODO: Add user-choice for categories -->
+<!-- TODO: Add user-choice for number of questions -->
+<!-- TODO: Add endless mode -->
+<template>
+  <div>
+    <p class="title">Trivia Master 3000</p>
+    <router-link type="button" class="button" to="/game">New Game</router-link>
   </div>
 </template>
 
+
 <script>
 export default {
-  name: "GameMenu"
+  name: "GameMenu",
+  components: {}
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 </style>
