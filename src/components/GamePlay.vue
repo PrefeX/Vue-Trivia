@@ -1,13 +1,13 @@
 <template>
   <div>
     <quiz-question
-      v-show="curQuestion < questions.length"
+      v-show="this.curQuestion < this.questions.length"
       v-bind:questionObject="questions[curQuestion]"
       v-on:answer="checkAnswer"
     ></quiz-question>
 
     <quiz-results
-      v-show="curQuestion >= questions.length"
+      v-if="curQuestion >= questions.length && questions.length != 0"
       v-bind:questionObject="questions"
       v-bind:selectedAnswers="selectedAnswers"
     ></quiz-results>

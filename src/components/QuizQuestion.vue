@@ -1,9 +1,6 @@
 <template>
   <div>
     <div class="container">
-      <h3 class="title">Category:</h3>
-      <div v-html="questionObject.category"></div>
-
       <h3 class="title">Question:</h3>
       <div v-html="questionObject.question"></div>
 
@@ -17,6 +14,13 @@
           v-html="answer"
         ></div>
       </div>
+
+      <h3 class="subtitle">Difficulty:</h3>
+      <div v-html="questionObject.difficulty"></div>
+      <br>
+
+      <h3 class="subtitle">Category:</h3>
+      <div v-html="questionObject.category"></div>
     </div>
   </div>
 </template>
@@ -37,6 +41,7 @@ export default {
       selectedAnswer: null
     };
   },
+  watch: {},
   methods: {
     randomInt: function(min, max) {
       // Creates a random int value between a min and max
@@ -49,6 +54,7 @@ export default {
       this.$emit("answer", this.selectedAnswer);
     }
   },
+
   beforeUpdate() {
     this.answerList = [];
     let tmpList = [];
