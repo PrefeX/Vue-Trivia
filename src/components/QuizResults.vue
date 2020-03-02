@@ -1,6 +1,9 @@
 <template>
   <div>
+    <section class="section">
     <h1 class="title">Game Over!</h1>
+    <h3 class="subtitle">Final score: {{this.score}} / {{this.selectedAnswers.length*10}}</h3>
+    </section>
 
     <section class="section" v-for="n in this.selectedAnswers.length" v-bind:key="n">
       <h1 class="title">Question {{n}}:</h1>
@@ -27,6 +30,21 @@ export default {
     selectedAnswers: {
       required: true,
       type: Array
+    }
+  },
+  data() {
+    return {
+      score: 0
+    };
+  },
+  created() {
+    for (let index = 0; index < this.selectedAnswers.length; index++) {
+      if (
+        this.questionObject[index].correct_answer ===
+        this.selectedAnswers[index]
+      ) {
+        this.score += 10;
+      }
     }
   }
 };

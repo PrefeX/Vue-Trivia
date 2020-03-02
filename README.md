@@ -1,4 +1,9 @@
-# trivia
+# Trivia game
+
+## Prerequisites
+```
+Node.js + npm
+```
 
 ## Project setup
 ```
@@ -19,6 +24,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
